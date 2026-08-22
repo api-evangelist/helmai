@@ -1,0 +1,35 @@
+generated: '2026-08-22'
+method: probed
+source: live GET of each /.well-known/ path on every host Helm.ai controls
+note: >-
+  Every probed path returned 404. helm.ai is a Webflow-hosted marketing site; its
+  /.well-known/ handler answers 404 with a short "Invalid .well-known request" HTML
+  body rather than a document. No WellKnown or SecurityTxt pointer is wired in
+  apis.yml, because nothing here was served — this file records a measured absence,
+  not a presence. Helm.ai operates no API, docs, developer or console subdomain
+  (api./docs./developer./developers./app./portal./console./status./trust./mcp.helm.ai
+  are all NXDOMAIN), so helm.ai is the only host with a /.well-known/ surface to probe.
+hosts:
+- host: helm.ai
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null

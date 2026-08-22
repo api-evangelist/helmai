@@ -1,17 +1,34 @@
 aid: helmai
 name: Helm.ai
-description: 'Helm.ai is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Helm.ai is an AI software company for autonomous driving and robotics,
+  founded in 2016 and headquartered in Redwood City, California. It develops camera-first
+  perception, path prediction and end-to-end autonomy stacks — Helm.ai Vision and Helm.ai
+  Driver — alongside the generative AI development and validation tools VidGen-3, GenSim-3
+  and WorldGen-1, all trained with its proprietary Deep Teaching unsupervised learning
+  method. The software is licensed to automotive OEMs and Tier 1 suppliers (Honda,
+  Volkswagen, Ambarella, NVIDIA, Qualcomm, Texas Instruments) as embedded, hardware-agnostic
+  components for production vehicle programs rather than as a public developer API. As of
+  2026-08-22 the company publishes no developer portal, API reference, SDK, or
+  machine-readable specification on any host it controls.'
+image: https://cdn.prod.website-files.com/65f47b0c0401bc4c08dd802a/6664edcabcd4c93b85b3c222_256x256.png
 url: https://raw.githubusercontent.com/api-evangelist/helmai/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-source-url: https://forgeglobal.com/helmai_stock/
 specificationVersion: '0.20'
 created: '2026-08-22'
 modified: '2026-08-22'
 tags:
 - Company
+- Artificial Intelligence
+- Autonomous Driving
+- Automotive
+- ADAS
+- Computer Vision
+- Machine Learning
+- Generative AI
+- Simulation
+- Robotics
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +36,56 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/helmai-domain-security.yml
+- type: LLMsTxt
+  url: llms/helmai-llms.txt
+- type: Conformance
+  url: conformance/helmai-conformance.yml
+- type: Compliance
+  url: conformance/helmai-conformance.yml
 - type: Website
-  url: https://forgeglobal.com/helmai_stock/
+  url: https://helm.ai/
+- type: Blog
+  url: https://helm.ai/blog
+- type: Support
+  url: https://helm.ai/contact-us
+- type: GitHubOrganization
+  url: https://github.com/helm-ai
+- type: PrivacyPolicy
+  url: https://helm.ai/privacy-policy
+- type: Press
+  url: https://helm.ai/news
+- type: PressKit
+  url: https://helm.ai/press-kit
+x-enrichment:
+  date: '2026-08-22'
+  status: minimal
+  artifacts_added: 7
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Helm.ai licenses embedded perception and autonomy software into OEM vehicle programs
+    (Honda, Volkswagen) and runs no developer surface whatsoever — api./docs./developer./
+    app./console./status.helm.ai are all NXDOMAIN, /developers /api /sdk /documentation
+    /pricing and every /.well-known/ path return 404 from its Webflow marketing site, and
+    the strings "SDK", "developer" and "docs" appear ZERO times across its seven product
+    and technology pages, which all end at a "BOOK A DEMO" contact form.
+  evidence:
+  - url: https://helm.ai/openapi.json
+    status: 404
+  - url: https://helm.ai/developers
+    status: 404
+  - url: https://helm.ai/.well-known/agent-card.json
+    status: 404
+  - url: https://helm.ai/.well-known/api-catalog
+    status: 404
+  - url: https://helm.ai/graphql
+    status: 404
+  - url: https://api.github.com/orgs/helm-ai/repos
+    status: 200
+  - url: https://helm.ai/sitemap.xml
+    status: 200
+  checked: '2026-08-22'

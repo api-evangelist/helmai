@@ -1,0 +1,21 @@
+generated: '2026-08-22'
+method: searched
+source: https://helm.ai/
+limit_count: 0
+rate_limits: []
+headers: []
+note: >-
+  No rate limits are published, because no public API exists to rate-limit. Helm.ai
+  operates no API host (api.helm.ai is NXDOMAIN), publishes no API reference, and the
+  word "SDK" and "developer" appear zero times across the seven product and technology
+  pages that make up its public site. Nothing to document and nothing to observe on a
+  live response. An honest zero.
+pointer_policy: >-
+  No `RateLimits` pointer is wired in apis.yml: `rate_limit_signal` credits a RateLimits
+  pointer at half weight on presence alone, so wiring one here would credit Helm.ai for a
+  rate-limit posture it does not have. The empty `rate_limits: []` is the finding.
+evidence:
+- url: https://helm.ai/api
+  status: 404
+- url: https://helm.ai/developers
+  status: 404

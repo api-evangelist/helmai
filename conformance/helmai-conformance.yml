@@ -1,0 +1,87 @@
+generated: '2026-08-22'
+method: searched
+source: https://helm.ai/products/perception
+docs:
+- https://helm.ai/products/perception
+- https://helm.ai/post/aspice-level-2
+note: >-
+  Helm.ai publishes no machine-readable API contract, so none of the API-layer
+  conformance families (oauth2, oidc, rfc9457, pagination, idempotency, json:api,
+  odata, scim) can be asserted or refuted from a spec — they are recorded as
+  not_applicable rather than false. What the company DOES publish are automotive
+  functional-safety and process certifications, which are the standards that matter
+  in its market; those are captured below with the exact page that states each claim.
+conformance:
+- id: aspice
+  name: Automotive SPICE (ISO/IEC 33020) Capability Level 2
+  conforms: true
+  evidence:
+    claim: >-
+      "Helm.ai Achieves ASPICE Capability Level 2, Demonstrating Readiness for Mass
+      Production of Safety-Critical Software" — assessed by UL Solutions across all
+      of the company's engineering processes.
+    url: https://helm.ai/post/aspice-level-2
+    assessor: UL Solutions
+    announced: '2025-01-27'
+    scope: all engineering processes
+- id: iso-26262
+  name: ISO 26262 functional safety (ASIL-B(D) components)
+  conforms: partial
+  evidence:
+    claim: >-
+      "Helm.ai Vision includes ISO 26262 ASIL-B(D) certified components and is
+      assessed at ASPICE Level 2, confirming its readiness for integration into
+      mass-production vehicles."
+    url: https://helm.ai/products/perception
+    scope: Helm.ai Vision perception system — components, not the whole system
+    caveat: >-
+      The company states certified COMPONENTS at ASIL-B(D); it does not claim a
+      system-level ISO 26262 certification. Recorded as partial for that reason.
+- id: iso-pas-21448
+  name: ISO/PAS 21448 Safety of the Intended Functionality (SOTIF)
+  conforms: partial
+  evidence:
+    claim: >-
+      "Our development process aligns with key automotive safety and quality standards
+      and is supported by leading certification bodies to ensure compliance ...
+      Adherence to ISO/PAS 21448 Safety of the Intended Functional Safety (SOTIF)"
+    url: https://helm.ai/technology
+    scope: development process alignment
+    caveat: >-
+      Stated as adherence/alignment, not as a third-party certification. Recorded as
+      partial for that reason.
+- id: oauth2
+  conforms: false
+  evidence: not_applicable — no published API contract or authentication surface
+- id: rfc9457
+  conforms: false
+  evidence: not_applicable — no published API contract, so no error envelope to assess
+- id: pagination
+  conforms: false
+  evidence: not_applicable — no published API contract
+- id: idempotency
+  conforms: false
+  evidence: not_applicable — no published write surface
+domain_standard:
+  market: automotive ADAS / autonomous driving software
+  declared_in_contract: false
+  note: >-
+    domain_standard_conformance reads the CONTRACT, not a prose claim. Helm.ai
+    publishes no contract, so no domain-standard signature (no AUTOSAR ARXML, no
+    ASAM OpenSCENARIO/OpenDRIVE/OSI artifact, no SENSORIS or ISO 23150 message
+    shape) could be found on any host it controls. REWARD-ONLY check, so nothing
+    is asserted here — the ASPICE and ISO 26262 claims above are process and
+    functional-safety certifications, not machine-readable interface standards.
+  site_sweep:
+    pages: 7
+    note: >-
+      Fetched every product + technology page in the sitemap and text-searched them.
+      ASAM / OpenSCENARIO / OpenDRIVE / AUTOSAR / ARXML / SENSORIS / ISO 23150 /
+      protobuf / gRPC all returned ZERO occurrences; so did "SDK", "developer" and
+      "docs". The only standards named anywhere on the public site are ISO 26262,
+      ISO/PAS 21448 and ASPICE — all process/safety, none of them an interface contract.
+  probed_for:
+  - ASAM OpenSCENARIO / OpenDRIVE / OSI
+  - AUTOSAR (ARXML, Adaptive Platform service descriptions)
+  - SENSORIS
+  - ISO 23150

@@ -1,0 +1,23 @@
+generated: '2026-08-22'
+method: searched
+source: https://helm.ai/contact-us
+plan_count: 0
+plans: []
+note: >-
+  Helm.ai publishes no pricing, plans, tiers or quotas of any kind. https://helm.ai/pricing
+  returns 404, there is no pricing entry in the sitemap (20 URLs, all marketing/blog),
+  and every product page (Helm.ai Vision, Helm.ai Driver, GenSim-3, VidGen-3, WorldGen-1)
+  ends in a "BOOK A DEMO" / "Request a demo from our AI experts" call to action that
+  routes to the general contact form. Commercial terms are negotiated per OEM/Tier 1
+  program — the software is licensed into production vehicle programs (Honda, Volkswagen),
+  not sold self-serve. An honest zero, not an unchecked field.
+pointer_policy: >-
+  No `Pricing` or `Plans` pointer is wired in apis.yml, because a pointer would assert
+  that Helm.ai publishes plans. It does not. This file records the measured absence.
+evidence:
+- url: https://helm.ai/pricing
+  status: 404
+- url: https://helm.ai/contact-us
+  status: 200
+- url: https://helm.ai/sitemap.xml
+  status: 200

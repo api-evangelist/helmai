@@ -1,0 +1,45 @@
+generated: '2026-08-22'
+method: searched
+source: registry sweep of npm, PyPI, GitHub, buf.build
+package_count: 0
+packages: []
+note: >-
+  No first-party Helm.ai client library, SDK or CLI exists on any public registry.
+  Helm.ai's GitHub organization (https://github.com/helm-ai) is real and GitHub-verified
+  with blog=helm.ai, but publishes ZERO public repositories. Two registry namesakes were
+  found and REJECTED on the ownership check — they belong to different companies that
+  happen to share the "Helm" name.
+rejected:
+- registry: pypi
+  name: helm-ai
+  version: 0.2.5
+  published: null
+  url: https://pypi.org/project/helm-ai/
+  reason: >-
+    Describes itself as an "AI agent orchestration and token-optimisation system" with no
+    home_page, author or project_urls pointing at helm.ai. Unrelated to the automotive
+    perception company.
+- registry: npm
+  name: '@helm-ai/mcp-server'
+  version: 0.15.0
+  published: null
+  url: https://www.npmjs.com/package/@helm-ai/mcp-server
+  reason: >-
+    Package homepage is https://gethelm.ai and the description is "MCP server for Helm —
+    run your business operations (projects, CRM, billing, automations, AI agents)". That
+    is a different company on a different domain. Saving it would have credited Helm.ai
+    with an MCP server it does not ship — exactly the Leadpages/htmlpub failure mode.
+registries_checked:
+- registry: npm
+  query: helm.ai, helm-ai, helmai, '@helm-ai/sdk'
+  first_party_hits: 0
+- registry: pypi
+  query: helm-ai, helmai
+  first_party_hits: 0
+- registry: github
+  query: org helm-ai (200, verified, 0 public repos); code search "helm.ai autonomous driving" (0)
+  first_party_hits: 0
+- registry: buf.build
+  query: helm-ai, helmai
+  first_party_hits: 0
+  note: buf.build answers 200 for any org path including a nonsense control, so both were false positives.
