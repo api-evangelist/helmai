@@ -10,6 +10,17 @@ description: 'Helm.ai is an AI software company for autonomous driving and robot
   components for production vehicle programs rather than as a public developer API. As of
   2026-08-22 the company publishes no developer portal, API reference, SDK, or
   machine-readable specification on any host it controls.'
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - none
+  generated: '2026-08-28'
+  method: derived
 image: https://cdn.prod.website-files.com/65f47b0c0401bc4c08dd802a/6664edcabcd4c93b85b3c222_256x256.png
 url: https://raw.githubusercontent.com/api-evangelist/helmai/refs/heads/main/apis.yml
 x-type: company
