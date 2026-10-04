@@ -48,8 +48,8 @@ tags:
 - Autonomous Driving
 - Automotive
 - ADAS
-- Computer-Vision
-- Machine-Learning
+- Computer Vision
+- Machine Learning
 - Generative AI
 - Simulation
 - Robotics
@@ -64,6 +64,8 @@ tags_raw:
 - Generative AI
 - Simulation
 - Robotics
+- Computer-Vision
+- Machine-Learning
 apis: []
 maintainers:
 - FN: Kin Lane
